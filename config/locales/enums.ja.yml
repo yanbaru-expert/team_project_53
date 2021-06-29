@@ -1,0 +1,18 @@
+ja:
+  enums:
+    text:
+      genre:
+        invisible: &a '非表示'
+        basic: &b 'Basic'
+        git: &c 'Git'
+        ruby: &d 'Ruby'
+        rails: &e 'Ruby on Rails'
+        php: &f 'PHP'
+    movie:
+      genre:
+        invisible: *a
+        basic: *b
+        git: *c
+        ruby: *d
+        rails: *e
+        php: *f
