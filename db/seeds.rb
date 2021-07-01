@@ -9,11 +9,13 @@ require "csv"
 CSV.foreach("db/csv_data/text_data.csv", headers: true) do |row|
   Text.create!(row.to_h)
 end
+puts "テキスト教材のCSVインポートに成功しました。"
 
 # 動画教材のCSVを読み込む
 CSV.foreach("db/csv_data/movie_data.csv", headers: true) do |row|
   Movie.create!(row.to_h)
 end
+puts "動画教材のCSVインポートに成功しました。"
 
 email = "test@example.com"
 password = "password"
