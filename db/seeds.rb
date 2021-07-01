@@ -5,9 +5,14 @@ end
 
 require "csv"
 
-# テキスト教材のCSVをを読み込み
+# テキスト教材のCSVを読み込む
 CSV.foreach("db/csv_data/text_data.csv", headers: true) do |row|
   Text.create!(row.to_h)
+end
+
+# 動画教材のCSVを読み込む
+CSV.foreach("db/csv_data/movie_data.csv", headers: true) do |row|
+  Movie.create!(row.to_h)
 end
 
 email = "test@example.com"
