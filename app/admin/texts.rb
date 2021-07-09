@@ -5,7 +5,7 @@ ActiveAdmin.register Text do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :genre, :title, :content
+  permit_params :genre, :title, :content
   #
   # or
   #
