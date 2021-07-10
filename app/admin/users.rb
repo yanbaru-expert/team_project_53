@@ -27,15 +27,6 @@ ActiveAdmin.register User do
     end
     f.actions
   end
-
-  show do
-    attributes_table do
-      row :email
-      row :created_at
-      row :updated_at
-    end
-    active_admin_comments
-  end
   #
   # or
   #

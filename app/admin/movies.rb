@@ -31,17 +31,6 @@ ActiveAdmin.register Movie do
     end
     f.actions
   end
-
-  show do
-    attributes_table do
-      row :genre, :text, &:genre_i18n
-      row :title
-      row :url
-      row :created_at
-      row :updated_at
-    end
-    active_admin_comments
-  end
   #
   # or
   #
