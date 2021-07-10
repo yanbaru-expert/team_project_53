@@ -1,4 +1,6 @@
 ActiveAdmin.setup do |config|
+  # 通常ログインしなくても管理者ログインができるようにする
+  config.skip_before_action :authenticate_user!
   # == Site Title
   #
   # Set the title that is displayed on the main layout
