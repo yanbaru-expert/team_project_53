@@ -11,7 +11,9 @@ ActiveAdmin.register Text do
     id_column
     column :genre, :text, &:genre_i18n
     column :title
-    column :content
+    column :content do |text|
+      text.content.to_s.truncate(100)
+    end
     column :created_at
     column :updated_at
     actions
@@ -36,7 +38,11 @@ ActiveAdmin.register Text do
     attributes_table do
       row :genre, :text, &:genre_i18n
       row :title
-      row :content
+      row :content do
+        div(class: "content") do
+          span "content goes here"
+        end
+      end
       row :created_at
       row :updated_at
     end
