@@ -1,0 +1,11 @@
+<div class="card-box clo-12 col-md-6 col-lg-4">
+  <div class="card content-card border-dark mb-3">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="<%= movie.url %>" allowfullscreen></iframe>
+    </div>
+    <div class="card-body">
+      <button type="button" class="btn btn-secondary btn-lg btn-block">読破済みにする</button>
+      <p class="movie-title"><%= "Lv.#{movie_counter + 1}：#{movie.title}" %></p>
+    </div>
+  </div>
+</div>
