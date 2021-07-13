@@ -18,10 +18,17 @@ end
 puts "動画教材のCSVインポートに成功しました。"
 
 email = "test@example.com"
+admin_email = "admin@example.com"
 password = "password"
 
 # テストユーザーが存在しないときだけ作成
 User.find_or_create_by!(email: email) do |user|
   user.password = password
   puts "ユーザーの初期データインポートに成功しました。"
+end
+
+# 管理者ユーザーが存在しないときだけ作成
+AdminUser.find_or_create_by!(email: admin_email) do |adminuser|
+  adminuser.password = password
+  puts "管理者ユーザーの初期データインポートに成功しました。"
 end
