@@ -1,12 +1,14 @@
 <div class="card-box col-12 col-md-6 col-lg-4">
-  <div class="card content-card border-dark mb-3">
-    <div class="card-header p-0">
-      <img class="img-fluid" alt="<%= text.title %>" src="https://d5izmuz0mcjzz.cloudfront.net/texts/no_image.jpg" loading="lazy">
+  <%= link_to(text_path(text)) do %>
+    <div class="card content-card border-dark mb-3">
+      <div class="card-header p-0">
+        <img class="img-fluid" alt="<%= text.title %>" src="https://d5izmuz0mcjzz.cloudfront.net/texts/no_image.jpg" loading="lazy">
+      </div>
+      <div class="card-body">
+        <button type="button" class="btn btn-secondary btn-lg btn-block">読破済みにする</button>
+        <p class="card-title mt-3"><%= text.title %></p>
+        <p>【<%= text.genre_i18n %>】</p>
+      </div>
     </div>
-    <div class="card-body">
-      <button type="button" class="btn btn-secondary btn-lg btn-block">読破済みにする</button>
-      <p class="card-title mt-3"><%= text.title %></p>
-      <p>【<%= text.genre_i18n %>】</p>
-    </div>
-  </div>
+  <% end %>
 </div>
