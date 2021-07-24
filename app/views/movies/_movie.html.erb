@@ -5,7 +5,7 @@
     </div>
     <div class="card-body">
       <button type="button" class="btn btn-secondary btn-lg btn-block">読破済みにする</button>
-      <p class="movie-title"><%= "Lv.#{movie_counter + 1}：#{movie.title}" %></p>
+      <p class="movie-title"><%= "Lv.#{movie_counter + @movies.offset_value + 1}：#{movie.title}" %></p>
     </div>
   </div>
 </div>
