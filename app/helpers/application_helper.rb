@@ -10,11 +10,11 @@ module ApplicationHelper
     end
   end
 
-  def movie_page_title
+  def page_title
     if params[:genre] == "php"
-      "PHP 動画"
+      "PHP"
     else
-      "Ruby/Rails 動画"
+      "Ruby/Rails"
     end
   end
 end
