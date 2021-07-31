@@ -6,5 +6,6 @@ class CreateReadProgresses < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    add_index :read_progresses, [:user_id, :text_id], unique: true
   end
 end
