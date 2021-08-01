@@ -1,4 +1,7 @@
 class Text < ApplicationRecord
+  has_many :read_progresses, dependent: :destroy
+  has_many :read_progressed_users, through: :read_progresses, source: :user
+
   with_options presence: true do
     validates :genre
     validates :title
@@ -16,6 +19,10 @@ class Text < ApplicationRecord
 
   RAILS_GENRE_LIST = %w[basic git ruby rails].freeze
   PHP_GENRE_LIST = %w[php].freeze
+
+  def read_progressed_by?(user)
+    read_progresses.exists?(user_id: user.id)
+  end
 
   def self.genre_select(genre)
     if genre == "php"
