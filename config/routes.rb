@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resources :texts, only: [:index, :show] do
     resource :read_progresses, only: [:create, :destroy]
   end
-  resources :movies, only: [:index]
+  resources :movies, only: [:index] do
+    resource :watch_progresses, only: [:create, :destroy]
+  end
 end
