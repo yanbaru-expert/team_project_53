@@ -1,4 +1,7 @@
 class Movie < ApplicationRecord
+  has_many :watch_progresses, dependent: :destroy
+  has_many :watch_progresses_users, through: :watch_progresses, source: :user
+
   with_options presence: true do
     validates :genre
     validates :title
