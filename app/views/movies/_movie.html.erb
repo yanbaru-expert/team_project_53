@@ -6,9 +6,9 @@
     <div class="card-body">
       <p id="movie-<%= movie.id %>">
         <% if movie.watch_progressed_by?(current_user) %>
-          <%= render "watch_progress", movie: movie %>
-        <% else %>
           <%= render "unwatch_progress", movie: movie %>
+        <% else %>
+          <%= render "watch_progress", movie: movie %>
         <% end %>
       </p>
       <p class="movie-title"><%= "Lv.#{movie_counter + @movies.offset_value + 1}：#{movie.title}" %></p>
