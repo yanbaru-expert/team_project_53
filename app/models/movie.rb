@@ -20,14 +20,14 @@ class Movie < ApplicationRecord
   PHP_GENRE_LIST = %w[php].freeze
 
   def watch_progressed_by?(user)
-    watch_progresses.where(user_id: user.id)
+    watch_progresses.any? { |watch_progress| watch_progress.user_id == user.id }
   end
 
   def self.genre_select(genre)
     if genre == "php"
-      where(genre: PHP_GENRE_LIST)
+      where(genre: PHP_GENRE_LIST).includes(:watch_progresses)
     else
-      where(genre: RAILS_GENRE_LIST)
+      where(genre: RAILS_GENRE_LIST).includes(:watch_progresses)
     end
   end
 end
